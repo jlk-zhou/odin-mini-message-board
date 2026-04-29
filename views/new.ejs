@@ -1,2 +1,9 @@
 <h1>New Messages</h1>
-<input type="text">
+<a href="/">Back to Home</a>
+<form method="POST" action="/new">
+  <label for="message-text">Your Message</label>
+  <textarea name="messageText" id="message-text" placeholder="Hello World! "></textarea>
+  <label for="user">By: </label>
+  <input type="text" name="messageUser" id="user" placeholder="Yamato Taro">
+  <button type="submit">Post Message! </button>
+</form>
