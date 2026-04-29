@@ -6,6 +6,15 @@
   <title>Mini Message Board</title>
 </head>
 <body>
-  <h1>Home</h1>
+  <h1>
+    <%= title %>
+  </h1>
+  <div class="messages">
+    <% messages.forEach(message => { %>
+      <p class="text"><%= message.text %></p>
+      <p class="user">By: <%= message.user %></p>
+      <p class="added">On: <%= message.added %></p>
+    <% }) %>
+  </div>
 </body>
 </html>
