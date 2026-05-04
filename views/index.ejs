@@ -12,8 +12,9 @@
   <a href="/new">Write New Message</a>
   <div class="messages">
     <% messages.forEach(message => { %>
-      <p class="text"><%= message.text %></p>
+      <p class="text"><%= message.content%></p>
       <a href="/message/<%= message.id %>">Open Detail</a>
+      <a href="/delete/<%= message.id %>">Delete</a>
     <% }) %>
   </div>
 </body>

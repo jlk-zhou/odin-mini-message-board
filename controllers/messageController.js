@@ -1,12 +1,11 @@
-const { messages } = require("../db");
+const db = require("../db/queries");
 
-function renderMessagePage(req, res) {
-  const message = messages.find(
-    (message) => message.id === Number(req.params.messageId),
-  );
+async function renderMessagePage(req, res) {
+  const id = Number(req.params.messageId); 
+  const message = await db.findMessageById(id);
   res.render("message", {
     title: "Message Detail",
-    message: message, 
+    message: message,
   });
 }
 

@@ -1,6 +1,7 @@
-const { messages } = require("../db");
+const db = require("../db/queries"); 
 
-function renderHomePage(req, res) {
+async function renderHomePage(req, res) {
+  const messages = await db.getAllMessages(); 
   res.render("index", {
     title: "Mini Messageboard",
     messages: messages,
